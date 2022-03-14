@@ -1,0 +1,227 @@
+@include keyframes(blink) {
+  0% { opacity: 0.05; }
+  50% { opacity: 1; }
+  100% { opacity: 0.05; }
+}
+
+.tiny {
+    font-size: 0.7rem;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.grey {
+    color: #dbdbdb;
+}
+
+#service-platform {
+  .title {
+    display: block;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .use-headphones {
+    margin-top: 14px;
+    margin-bottom: 16px;
+    // font-size: 1rem;
+    font-size: 0.9rem;
+    // font-weight: bold;
+  }
+
+  .fa-headphones {
+    font-size: 8em;
+  }
+
+  .instructions-header {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 26px;
+  }
+
+  .instructions {
+    padding: 0;
+    margin-bottom: 60px;
+
+    .instruction {
+      // font-size: 0.9rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 4px 0;
+      font-weight: bold;
+    }
+  }
+}
+
+#service-sound-check {
+  .section-center, .section-bottom {
+    padding: 0;
+  }
+
+  .check-yes, .check-no {
+    // box-sizing: border-box;
+    // width: 100%;
+    // height: 100%;
+    color: white;
+    font-size: 16px;
+  }
+
+  .check-yes {
+    background-color: #303030;
+    color: #ffffff;
+  }
+
+  .check-no {
+    background-color: #202020;
+    color: #ffffff;
+  }
+}
+
+#experience {
+   .title {
+    display: block;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .use-headphones {
+    margin-top: 14px;
+    margin-bottom: 16px;
+    // font-size: 1rem;
+    font-size: 0.9rem;
+    // font-weight: bold;
+  }
+
+  .fa-headphones {
+    font-size: 5em;
+  }
+
+  .section-bottom, .section-top .section-center {
+    padding: 0 20px;
+  }
+
+  .section-top > div, .section-bottom > div {
+    font-size: 0.8rem;
+  }
+
+  .section-center > div {
+    font-size: 0.9rem;
+  }
+
+  #background-image,
+  #background-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  #choice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    #restart, #continue {
+      box-sizing: border-box;
+      width: 100%;
+      height: 50%;
+      // border: 1px solid white;
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+    }
+
+    #restart {
+      background-color: #303030;
+      color: #ffffff;
+    }
+
+    #continue {
+      background-color: #202020;
+      color: #ffffff;
+    }
+  }
+
+  .gradient {
+    background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .large div {
+    font-size: 1.6rem;
+  }
+
+  .bold div {
+    font-weight: bold;
+  }
+
+  .banner {
+    background-color: rgba(10, 10, 10, 0.5);
+    @include animation('blink 5.6s ease-in-out infinite');
+  }
+
+  // credits
+  dl {
+    padding: 0 30px;
+
+    dt, dd {
+      font-size: 0.8rem;
+
+      &.first {
+        font-size: 0.9rem;
+      }
+    }
+
+    dt {
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    dd {
+      margin-bottom: 10px;
+      text-align: right;
+      font-style: italic;
+
+      &.first {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  a {
+    color: white;
+    display: block;
+  }
+
+}
+
+
