@@ -1,0 +1,35 @@
+# transpiled files and dependencies
+/node_modules
+/public/js
+/public/css
+/dist
+.soundworks
+
+# ignore all config except default
+/src/server/config/*
+!/src/server/config/default.js
+
+# application instance specific
+/logs
+/db
+
+/bin/.browserify-cache.json
+
+# ignore junk files
+npm-debug.log
+.DS_Store
+Thumbs.db
+
+# exclude all project (should be kept somewhere else)
+projects/*
+!projects/default
+# but not the folder itself
+!projects/.gitkeep
+
+package-lock.json
+
+projects/default/assets/streams/**/*
+
+sound-check-results.txt
+
+*.wav
