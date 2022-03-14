@@ -6,34 +6,34 @@ import * as soundworks from 'soundworks/server';
 import PlayerExperience from './PlayerExperience';
 import SoundCheck from './services/SoundCheck';
 
-const configName = process.env.ENV || 'default';
+const configName = process.env.ENV ||  'default';
 const configPath = path.join(__dirname, 'config', configName);
 let config = null;
 let projectConfig = null;
 
 // rely on node `require` for synchronicity
 try {
-  config = require(configPath).default;
-} catch(err) {
-  console.error(`Invalid ENV "${configName}", file "${configPath}.js" not found`);
-  console.error(err);
-  process.exit(1);
+    config = require(configPath).default;
+} catch (err) {
+    console.error(`Invalid ENV "${configName}", file "${configPath}.js" not found`);
+    console.error(err);
+    process.exit(1);
 }
 
 // get app config
 const projectName = config.projectName;
 
 if (!projectName)
-  throw new Error('Invalid project name, please define the `projectName` in `src/server/shared/config`');
+    throw new Error('Invalid project name, please define the `projectName` in `src/server/shared/config`');
 
 const projectConfigPath = path.join(process.cwd(), 'projects', projectName, 'config.js');
 
 try {
-  projectConfig = require(projectConfigPath);
-} catch(err) {
-  console.error(`Invalid project config file "${projectConfigPath}"`);
-  console.error(err);
-  process.exit(1);
+    projectConfig = require(projectConfigPath);
+} catch (err) {
+    console.error(`Invalid project config file "${projectConfigPath}"`);
+    console.error(err);
+    process.exit(1);
 }
 
 // configure express environment ('production' enables cache systems)
@@ -52,15 +52,15 @@ soundworks.server.router.get('/project-config', (req, res) => res.json(projectCo
 
 // define the configuration object to be passed to the `.ejs` template
 soundworks.server.setClientConfigDefinition((clientType, config, httpRequest) => {
-  return {
-    clientType: clientType,
-    env: config.env,
-    appName: config.appName,
-    websockets: config.websockets,
-    version: config.version,
-    defaultType: config.defaultClient,
-    assetsDomain: config.assetsDomain,
-  };
+    return {
+        clientType: clientType,
+        env: config.env,
+        appName: config.appName,
+        websockets: config.websockets,
+        version: config.version,
+        defaultType: config.defaultClient,
+        assetsDomain: config.assetsDomain,
+    };
 });
 
 // parse all states to create controllers
@@ -69,20 +69,20 @@ const sharedParams = soundworks.server.require('shared-params');
 sharedParams.addBoolean('debug-mode', 'Debug mode', false);
 
 projectConfig.states.forEach(state => {
-  const name = slugify(state.title);
-  const label = state.title;
-  const options = state.events.map((event, index) => {
-    return `[${index}] - ${event.type} (${event.time}s)`;
-  });
+    const name = slugify(state.title);
+    const label = state.title;
+    const options = state.events.map((event, index) => {
+        return `[${index}] - ${event.type} (${event.time}s)`;
+    });
 
-  sharedParams.addEnum(name, label, options);
+    sharedParams.addEnum(name, label, options);
 });
 
 // launch experiences
 const experience = new PlayerExperience('player', projectConfig, projectName);
 
 if (config.env !== 'production') {
-  const controller = new soundworks.ControllerExperience('controller');
+    const controller = new soundworks.ControllerExperience('controller');
 }
 
 // start application
