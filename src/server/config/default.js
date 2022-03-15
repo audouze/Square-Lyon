@@ -30,7 +30,7 @@ export default {
     assetsDomain: '/',
 
     // port used to open the http server, in production this value is typically 80
-    port: 8000,
+    port: 8059,
 
     // define if the server should use gzip compression for static files
     enableGZipCompression: true,
