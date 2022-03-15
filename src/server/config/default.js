@@ -58,7 +58,7 @@ export default {
     websockets: {
         url: '',
         transports: ['websocket'],
-        path: '/squarelyon/',
+        path: '',
         // @note: EngineIO defaults
         // pingTimeout: 3000,
         // pingInterval: 1000,
