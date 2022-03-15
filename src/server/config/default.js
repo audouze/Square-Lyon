@@ -27,7 +27,7 @@ export default {
     // define from where the assets (static files) should be loaded, these value
     // could also refer to a separate server for scalability reasons. This value
     // should also be used client-side to configure the `audio-buffer-manager` service.
-    assetsDomain: '/squarelyon/',
+    assetsDomain: '/squarelyon',
 
     // port used to open the http server, in production this value is typically 80
     port: 8059,
@@ -58,7 +58,7 @@ export default {
     websockets: {
         url: '',
         transports: ['websocket'],
-        path: '',
+        path: '/squarelyon/socket.io',
         // @note: EngineIO defaults
         // pingTimeout: 3000,
         // pingInterval: 1000,
