@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * https://unpkg.com/wavesurfer.js https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://unpkg.com/wavesurfer.js https://kit.fontawesome.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com/wavesurfer.js https://kit.fontawesome.com "> -->
 
     <% if (data.includeCordovaTags) { %>
         <!-- cordova metas -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src * https://unpkg.com/wavesurfer.js https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://unpkg.com/wavesurfer.js https://kit.fontawesome.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com/wavesurfer.js https://kit.fontawesome.com "> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <% } %>
@@ -21,7 +20,7 @@
                             <% } %>
             </title>
 
-            <!-- <link rel="stylesheet" href="<%= data.assetsDomain %>font-awesome/css/font-awesome.min.css"> -->
+            <link rel="stylesheet" href="<%= data.assetsDomain %>font-awesome/css/font-awesome.min.css">
             <link rel="stylesheet" href="<%= data.assetsDomain %>css/main.css?<%= data.version %>">
 </head>
 
@@ -54,7 +53,6 @@
                                     a.src = g;
                                     m.parentNode.insertBefore(a, m)
                                 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
                                 ga('create', '<%= data.gaId %>', 'auto');
                                 ga('send', 'pageview');
                             </script>
