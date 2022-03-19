@@ -34,10 +34,10 @@
         <script src="cordova.js"></script>
         <% } %>
 
-            <!-- <script>
+            <script>
                 window.soundworksConfig = JSON.parse('<%- JSON.stringify(data) %>');
-            </script> -->
-            <script src="../squarelyon/html/inlineScript.js"></script>
+            </script>
+            <!-- <script src="../squarelyon/html/inlineScript.js"></script> -->
 
             <% if (data.env === 'production') { %>
                 <script src="<%= data.assetsDomain %>js/<%= data.clientType %>.min.js?<%= data.version %>"></script>

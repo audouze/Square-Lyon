@@ -1,1 +1,0 @@
-window.soundworksConfig = JSON.parse('{"clientType":"player","env":"development","appName":"SQUARE","websockets":{"url":"","transports":["websocket"],"path":"/squarelyon/socket.io","initialPacket":["0"]},"version":"0.0.1","defaultType":"player","assetsDomain":"/squarelyon/"}');
