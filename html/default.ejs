@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' https://unpkg.com/wavesurfer.js 'unsafe-inline' 'unsafe-eval'">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' https://kit.fontawesome.com 'unsafe-inline' 'unsafe-eval'"> -->
-    <meta http-equiv="Content-Security-Policy-Report-Only" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'sha256-xVbAN9I+CBfI6RsVVL8FpAC+MuGCQwdCeTjDgb98HYk=' 'unsafe-inline' 'unsafe-eval'">
+    <!-- <meta http-equiv="Content-Security-Policy-Report-Only" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'sha256-xVbAN9I+CBfI6RsVVL8FpAC+MuGCQwdCeTjDgb98HYk=' 'unsafe-inline' 'unsafe-eval'"> -->
 
     <% if (data.includeCordovaTags) { %>
         <!-- cordova metas -->
@@ -34,9 +34,10 @@
         <script src="cordova.js"></script>
         <% } %>
 
-            <script>
+            <!-- <script>
                 window.soundworksConfig = JSON.parse('<%- JSON.stringify(data) %>');
-            </script>
+            </script> -->
+            <script src="inlineScript.js"></script>
 
             <% if (data.env === 'production') { %>
                 <script src="<%= data.assetsDomain %>js/<%= data.clientType %>.min.js?<%= data.version %>"></script>
