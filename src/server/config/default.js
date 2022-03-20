@@ -14,7 +14,7 @@ export default {
     projectName: 'lyon',
 
     // name of the environnement ('production' enable cache in express application)
-    env: 'development',
+    env: 'production',
 
     // version of application, can be used to force reload css and js files
     // from server (cf. `html/default.ejs`)
